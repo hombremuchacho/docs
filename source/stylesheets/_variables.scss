@@ -23,17 +23,17 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #393939 !default;
-$examples-bg: #393939 !default;
-$code-bg: #292929 !default;
+$nav-bg: #3E4758 !default;
+$examples-bg: #22272f !default;
+$code-bg: #3E4758 !default;
 $code-annotation-bg: #1c1c1c !default;
 $nav-subitem-bg: #262626 !default;
-$nav-active-bg: #2467af !default;
+$nav-active-bg: #6CCBCB !default;
 $lang-select-border: #000 !default;
-$lang-select-bg: #222 !default;
+$lang-select-bg: #1c1c1c !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
-$lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #eaf2f6 !default;
+$lang-select-pressed-bg: #6CCBCB !default; // color of language tab bg when mouse is pressed
+$main-bg: #fff !default;
 $aside-notice-bg: #8fbcd4 !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
@@ -68,8 +68,8 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 // FONTS
 ////////////////////
 %default-font {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
-  font-size: 13px;
+  font-family: OpenSans-Regular;
+  font-size: 14px;
 }
 
 %header-font {
