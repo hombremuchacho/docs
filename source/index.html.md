@@ -14,15 +14,15 @@ search: true
 
 # Introduction
 
-Turnstyle's APIs provide access to the same data and metrics available on our 
-dashboard through programmatic means. This is a living document so please be 
-ure to check back frequently for updates. Our APIs are *only* available to active
-Turnstyle customers. 
+Turnstyle's APIs provide access to the same data and metrics available on our
+dashboard through programmatic means. This is a living document so please be
+sure to check back frequently for updates. Our APIs are *only* available to active
+Turnstyle customers.
 
 If you are interested in purchasing Turnstyle please contact sales@getturnstyle.com
 
 If you have questions about our documentation please contact
-support@getturnstyle.com 
+support@getturnstyle.com
 
 
 # Authentication
@@ -54,16 +54,16 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
     "token_type": "bearer",
     "scope": "data user user-venues user-regions user-widgets navizon-site navizon-jack navizon-hub user-venues-list venue"
   }
-] 
+]
 ```
 
-Before any requests can be made, you must first request an access token. 
+Before any requests can be made, you must first request an access token.
 
-Turnstyle uses OAuth 2.0 Authentication. Turnstyle requires the Id/Secret 
-to be encoded using base64 encoding (id:secret). The access tokens expire 
-every 24 hours. 
+Turnstyle uses OAuth 2.0 Authentication. Turnstyle requires the Id/Secret
+to be encoded using base64 encoding (id:secret). The access tokens expire
+every 24 hours.
 
-Turnstyle does 'leaky bucket' request throttling. If you require loosened 
+Turnstyle does 'leaky bucket' request throttling. If you require loosened
 throttling restrictions please contact support@getturnstyle.com
 
 ### HTTPS Request
@@ -222,8 +222,8 @@ Content-Type:application/json
 }
 ```
 
-A lists active vistors who currently have open sessions with a 'venue. 
-Note: Session timeout length can be defined under venue settings in the 
+A lists active vistors who currently have open sessions with a 'venue.
+Note: Session timeout length can be defined under venue settings in the
 dashboard.
 
 
@@ -296,8 +296,8 @@ Content-Type:application/json
 }
 ```
 
-The number of visitors seen at a particular venue. This is broken out by new 
-visitors and total visitors. New visitors are visitors who have never been 
+The number of visitors seen at a particular venue. This is broken out by new
+visitors and total visitors. New visitors are visitors who have never been
 seen at the venue previously.
 
 
@@ -376,9 +376,9 @@ Content-Type:application/json
 
 ```
 
-A lists of each individual user (as specified by a MAC ID), their entry time 
+A lists of each individual user (as specified by a MAC ID), their entry time
 into the venue, their maximum detected RSSI, and their exit time from the venue.
-Note: MAC ID is a unique device identifier, but it is not equal to the visitor's 
+Note: MAC ID is a unique device identifier, but it is not equal to the visitor's
 hardware MAC Address.
 
 
@@ -494,9 +494,9 @@ Content-Type:application/json
 
 ```
 
-The number of walk-bys detected by a venue. Walk-by traffic meets certain criteria 
-around RSSI and FRAMES to be counted as Walk-By (vs Visitors or Noise). This metric 
-displays a summary of the walk-by traffic for the specified period and is not broken 
+The number of walk-bys detected by a venue. Walk-by traffic meets certain criteria
+around RSSI and FRAMES to be counted as Walk-By (vs Visitors or Noise). This metric
+displays a summary of the walk-by traffic for the specified period and is not broken
 out by day.
 
 
@@ -601,7 +601,7 @@ Content-Type:application/json
 
 ```
 
-The percentage of visitors in segmented time buckets, for the period specified. 
+The percentage of visitors in segmented time buckets, for the period specified.
 Time bucket are: <5m, 5-10m, 10-30m, 30-60m, 1-2h, 2-3h, 3-4h, 4-6h, 6-9h, 9-12h
 and >12h.
 
@@ -710,10 +710,10 @@ Content-Type:application/json
 
 ```
 
-The number of visitors in 'visit frequency' buckets within the selected time 
+The number of visitors in 'visit frequency' buckets within the selected time
 period. Note: Visitors who have visited 10+ times are grouped into one visit-
-frequency bucket.percentage of visitors in segmented time buckets, for the 
-period specified. 
+frequency bucket.percentage of visitors in segmented time buckets, for the
+period specified.
 
 ### HTTPS Request
 
@@ -798,10 +798,10 @@ Content-Type:application/json
 
 ```
 
-The number of visitors inside a venue at a specific time of day. The time 
+The number of visitors inside a venue at a specific time of day. The time
 increments whenever visitor(s) enter/exit *and* the AP reports data. This
-metric returns data for the single day specified in the request, ie. 
-2015-04-06. An additional request is required for each day of interest. 
+metric returns data for the single day specified in the request, ie.
+2015-04-06. An additional request is required for each day of interest.
 
 ### HTTPS Request
 
@@ -996,17 +996,17 @@ TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
 
 ```raw
 
-https://api-general.getturnstyle.com/url_defined_in_campaign_portal/trigger/venue_id/mac_id/user_id/timestamp 
+https://api-general.getturnstyle.com/url_defined_in_campaign_portal/trigger/venue_id/mac_id/user_id/timestamp
 
 ```
 
 Campaign POST URLs can be set when creating or modifying a campaign (inside the
-Turnstyle dashboard), in the message tab > Advanced (found using the gear in the 
+Turnstyle dashboard), in the message tab > Advanced (found using the gear in the
 top right of the modal window.
 
-If a campaign has a POST URL set, then when the campaign would have normally just 
-sent a message a webhook will instead first send a POST request to that URL. If 
-there is no response with 3 seconds, the email/sms message will send. 
+If a campaign has a POST URL set, then when the campaign would have normally just
+sent a message a webhook will instead first send a POST request to that URL. If
+there is no response with 3 seconds, the email/sms message will send.
 
 ### HTTPS Request
 
@@ -1032,23 +1032,23 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 
 ```
 
-> Post URL 
+> Post URL
 
 ```raw
 
-https://api-general.getturnstyle.com/response_to_Turnstyle/send_bool/coupon_name/coupon_description/redeem_message/expiry_date/barcode_value/barcode_type/email_logo/email_subject/email_body/email_from/email_html_bool/tweets/sms_message` 
+https://api-general.getturnstyle.com/response_to_Turnstyle/send_bool/coupon_name/coupon_description/redeem_message/expiry_date/barcode_value/barcode_type/email_logo/email_subject/email_body/email_from/email_html_bool/tweets/sms_message`
 
 ```
 
 
 To tailor the message and/or coupon that Turnstyle delivers to the end-client,
-you can specify the parameters to send via a RESPONSE to the POST Turnstyle 
+you can specify the parameters to send via a RESPONSE to the POST Turnstyle
 sends.
 
-The 'override' properties are optional. The campaign's message and coupon (if 
-the campaign has one) will only be sent if 'send' is true or if a response is 
-not provided. If the 'override' property is given, it will override properties 
-of the campaign or coupon just for that message. Properties that are not specified 
+The 'override' properties are optional. The campaign's message and coupon (if
+the campaign has one) will only be sent if 'send' is true or if a response is
+not provided. If the 'override' property is given, it will override properties
+of the campaign or coupon just for that message. Properties that are not specified
 will have the values given to the campaign in Turnstyle's application.
 
 ### HTTPS POST URL
@@ -1080,38 +1080,38 @@ sms_message        | Content of the text message                                
 
 ```raw
 
-https://api-general.getturnstyle.com/created_by_customer_success_team/mac_id/user_id/first_name/last_name/phone/email/gender/birthday/job/company/locale/facebook_id/twitter_name/twitter_id/google_id/linkedin_id 
+https://api-general.getturnstyle.com/created_by_customer_success_team/mac_id/user_id/first_name/last_name/phone/email/gender/birthday/job/company/locale/facebook_id/twitter_name/twitter_id/google_id/linkedin_id
 
 ```
 
-Turnstyle has the capability of sending POST notifications when users sign in 
-to specified access points. When a user signs into one of the associated venues, 
-a POST request is made to the URL. If you would like to enable functionality, 
-please contact support@getturnstyle.com 
+Turnstyle has the capability of sending POST notifications when users sign in
+to specified access points. When a user signs into one of the associated venues,
+a POST request is made to the URL. If you would like to enable functionality,
+please contact support@getturnstyle.com
 
-Note: Not all of the user properties will be present, depending on what method 
-the user used to authenticate, and what info they granted Turnstyle to have access 
+Note: Not all of the user properties will be present, depending on what method
+the user used to authenticate, and what info they granted Turnstyle to have access
 to.
 
-### Response 
+### Response
 
-Servers referenced in sign-in webhooks may respond with JSON of the form 
-{"radiusAttributes": {"key", "value"}}. The key-value pairs in the "radiusAttributes" 
-property will override RADIUS attribute values that would otherwise be sent to 
-the user. For example, {"radiusAttributes": {"Session-Timeout": 600}} would 
-override the Session-Timeout RADIUS attribute and restrict the user's session 
-to 10 minutes. Attribute names are not case-sensitive. Allowed attributes are 
-Session-Timeout, Idle-Timeout, WISPr-Bandwidth-Max-Up, WISPr-Bandwidth-Max-Down, 
+Servers referenced in sign-in webhooks may respond with JSON of the form
+{"radiusAttributes": {"key", "value"}}. The key-value pairs in the "radiusAttributes"
+property will override RADIUS attribute values that would otherwise be sent to
+the user. For example, {"radiusAttributes": {"Session-Timeout": 600}} would
+override the Session-Timeout RADIUS attribute and restrict the user's session
+to 10 minutes. Attribute names are not case-sensitive. Allowed attributes are
+Session-Timeout, Idle-Timeout, WISPr-Bandwidth-Max-Up, WISPr-Bandwidth-Max-Down,
 ChilliSpot-Max-Output-Octets and ChilliSpot-Max-Input-Octets. If WISPr-Bandwidth-
-Max-Up or WISPr-Bandwidth-Max-Down are set, analogous vendor-specific attributes 
+Max-Up or WISPr-Bandwidth-Max-Down are set, analogous vendor-specific attributes
 will be set automatically.
 
-If you do not wish to override any RADIUS attributes, you may simply respond 
+If you do not wish to override any RADIUS attributes, you may simply respond
 with "OK" or {} (an empty JSON object).
 
-You should give timely responses as Turnstyle's captive portal will wait up 
-to several seconds for them before continuing to sign a user in. Note that 
-additional fields may be present in the "user" object of the JSON sent 
+You should give timely responses as Turnstyle's captive portal will wait up
+to several seconds for them before continuing to sign a user in. Note that
+additional fields may be present in the "user" object of the JSON sent
 depending on venue geography (example: AirMiles)
 
 ### HTTPS Request
@@ -1119,7 +1119,7 @@ depending on venue geography (example: AirMiles)
 `POST https://api-general.getturnstyle.com/created_by_customer_success_team/mac_id/user_id/first_name/last_name/phone/email/gender/birthday/job/company/locale/facebook_id/twitter_name/twitter_id/google_id/linkedin_id`
 
 
-### RADIUS Settings 
+### RADIUS Settings
 
 Parameter                    | Description                                               | Example (Kilobytes)
 ---------------------------- | --------------------------------------------------------- | -------------------
@@ -1135,20 +1135,20 @@ Session-Timeout              | Time before the session ends                     
 WISPR-Bandwidth-Max-Down     | User download bandwidth limit                             | 320000 (bytes)
 WISPR-Bandwidth-Max-Up       | User upload bandwidth limit                               | 320000 (bytes)
 
-# Third-Party Captive Portal 
+# Third-Party Captive Portal
 
-When posting user data, the access token will need to be provided in every 
-request. Below, "ap_mac" means the access point's MAC address and "client_mac" 
-means the MAC address of the user signing into that access point. The MAC 
-addresses are not case sesnitive and insensitive to whether they contain colons, 
-hyphens, periods or no delimiters. The "opt_in" boolean data parameter is 
+When posting user data, the access token will need to be provided in every
+request. Below, "ap_mac" means the access point's MAC address and "client_mac"
+means the MAC address of the user signing into that access point. The MAC
+addresses are not case sesnitive and insensitive to whether they contain colons,
+hyphens, periods or no delimiters. The "opt_in" boolean data parameter is
 required, if not included you will recieve a 400 response information.
 
-To identify which Access Point a user is connecting on, you are required to 
-send a device identifier. This can be the Access Point's MAC Address (ap_mac), 
+To identify which Access Point a user is connecting on, you are required to
+send a device identifier. This can be the Access Point's MAC Address (ap_mac),
 or another unique identifier (ap_alias) which can be up to an 80 character string.
 
-## Facebook Authentication 
+## Facebook Authentication
 
 > POST URL
 
@@ -1196,7 +1196,7 @@ Content-Type: application/json
 
 Each authentication method requires specific properties. If required properties
 are not included, a 400 error will be given. If a property is not listed below
-that property is not accepted for this authentication route. 
+that property is not accepted for this authentication route.
 
 ### HTTPS Request
 
@@ -1206,18 +1206,18 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided 
+ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
 client_mac   | User's device MAC adddress                      | Yes
 first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No 
+last_name    | User's last name                                | No
 birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No 
-email        | User's email                                    | No 
-facebook_id  | User's Facebook profile ID                      | Yes 
-interests    | Interests the user has                          | No 
+gender       | User's gender                                   | No
+email        | User's email                                    | No
+facebook_id  | User's Facebook profile ID                      | Yes
+interests    | Interests the user has                          | No
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-## Google Authentication 
+## Google Authentication
 
 > POST URL
 
@@ -1259,7 +1259,7 @@ Content-Type: application/json
 
 Each authentication method requires specific properties. If required properties
 are not included, a 400 error will be given. If a property is not listed below
-that property is not accepted for this authentication route. 
+that property is not accepted for this authentication route.
 
 ### HTTPS Request
 
@@ -1269,17 +1269,17 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided 
+ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
 client_mac   | User's device MAC adddress                      | Yes
 first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No 
+last_name    | User's last name                                | No
 birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No 
-email        | User's email                                    | No 
-google_id    | User's Google profile ID                        | Yes 
+gender       | User's gender                                   | No
+email        | User's email                                    | No
+google_id    | User's Google profile ID                        | Yes
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-## Google Authentication 
+## Google Authentication
 
 > POST URL
 
@@ -1318,7 +1318,7 @@ Content-Type: application/json
 
 Each authentication method requires specific properties. If required properties
 are not included, a 400 error will be given. If a property is not listed below
-that property is not accepted for this authentication route. 
+that property is not accepted for this authentication route.
 
 ### HTTPS Request
 
@@ -1328,14 +1328,14 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided 
+ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
 client_mac   | User's device MAC adddress                      | Yes
 name         | User's name as denoted by Twitter's API         | No (note, if not provided emails will not have a personalized greeting)
-twitter_name | User's twitter name                             | Yes 
-twitter_id   | User's Twitter profile ID                       | Yes 
+twitter_name | User's twitter name                             | Yes
+twitter_id   | User's Twitter profile ID                       | Yes
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-## SMS Authentication 
+## SMS Authentication
 
 > POST URL
 
@@ -1376,7 +1376,7 @@ Content-Type: application/json
 
 Each authentication method requires specific properties. If required properties
 are not included, a 400 error will be given. If a property is not listed below
-that property is not accepted for this authentication route. 
+that property is not accepted for this authentication route.
 
 ### HTTPS Request
 
@@ -1386,17 +1386,17 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided 
+ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
 client_mac   | User's device MAC adddress                      | Yes
 first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No 
+last_name    | User's last name                                | No
 birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No 
-email        | User's email                                    | No 
-phone        | User's phone number                             | Yes 
+gender       | User's gender                                   | No
+email        | User's email                                    | No
+phone        | User's phone number                             | Yes
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-## Email Authentication 
+## Email Authentication
 
 > POST URL
 
@@ -1437,7 +1437,7 @@ Content-Type: application/json
 
 Each authentication method requires specific properties. If required properties
 are not included, a 400 error will be given. If a property is not listed below
-that property is not accepted for this authentication route. 
+that property is not accepted for this authentication route.
 
 ### HTTPS Request
 
@@ -1447,17 +1447,17 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided 
+ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
 client_mac   | User's device MAC adddress                      | Yes
 first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No 
+last_name    | User's last name                                | No
 birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No 
-email        | User's email                                    | Yes 
-phone        | User's phone number                             | No 
+gender       | User's gender                                   | No
+email        | User's email                                    | Yes
+phone        | User's phone number                             | No
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-## User Update 
+## User Update
 
 > POST URL
 
@@ -1492,14 +1492,14 @@ Content-Type: application/json
 
 ```
 
-You may have a use case in which a user updates their information on your 
-application's side, and you would like to sync this data back to Turnstyle. For 
-example, if on your POS a user changes their email or phone number, you can use 
-the following API to update the user profile on the Turnstyle platform instead of 
-waiting for the user to sign back into the Wi-Fi portal to provide their updated 
-information. Note All of the fields under 'data' are optional (but you must 
-include at least one). Also, under the 'data' field, you are able to update all of 
-the same fields as the different data types in the above user registration methods. 
+You may have a use case in which a user updates their information on your
+application's side, and you would like to sync this data back to Turnstyle. For
+example, if on your POS a user changes their email or phone number, you can use
+the following API to update the user profile on the Turnstyle platform instead of
+waiting for the user to sign back into the Wi-Fi portal to provide their updated
+information. Note All of the fields under 'data' are optional (but you must
+include at least one). Also, under the 'data' field, you are able to update all of
+the same fields as the different data types in the above user registration methods.
 
 The account_name in the URL will be provided by Turnstyle to you.
 
@@ -1512,49 +1512,49 @@ Property     | Description                                     | Required
 access_token | The token generated in oauth                    | Yes
 user_id      | The visitors Turnstyle ID (or wifi_uid)         | Yes
 first_name   | User's first name                               | No (
-last_name    | User's last name                                | No 
-email        | User's email                                    | Yes 
-phone        | User's phone number                             | No 
+last_name    | User's last name                                | No
+email        | User's email                                    | Yes
+phone        | User's phone number                             | No
 opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
-# Advanced Social WiFi Settings 
+# Advanced Social WiFi Settings
 
 ## Include User Data Check Box
 
 
-This section contains documentation for some of the advanced features available 
-when customizing a venue's social wifi settings in the Turnstyle dashboard. 
+This section contains documentation for some of the advanced features available
+when customizing a venue's social wifi settings in the Turnstyle dashboard.
 These are NOT Turnstyle endpoints.
 
-When enabled, all available user data will be appended to the redirect url as 
-query string parameters. The data available is dependent on the user's 
+When enabled, all available user data will be appended to the redirect url as
+query string parameters. The data available is dependent on the user's
 authentication method and permissions granted.
 
-Fields with null values will be stripped and not included in the redirect query 
+Fields with null values will be stripped and not included in the redirect query
 string.
 
 ### Redirect URL Example
 
 `http://www.redirecturl.com/?id=1&email=noreply%40getturnstyle.com&first_name=John&last_name=Smith&gender=M&birthday_approximate=0&opted_in=1&email_valid=1`
 
-Property             | Description                                
+Property             | Description
 -------------------- | -------------------------------------------
 id                   | User's Turnstyle ID (or wifi_uid)
-birthday             | User's birthday 
+birthday             | User's birthday
 birthday_approximate | Is the user's birthday guessed, boolean
 company              | Where the user works, as per LinkedIn
-email                | User's email address 
+email                | User's email address
 email_valid          | Is the user's email validated, boolean
 facebook_id          | User's Facebook profile ID
-first_name           | User's first name 
+first_name           | User's first name
 last_name            | User's last name
-gender               | User's gender 
-google_id            | User's Google profile ID 
-job                  | User's job, as per LinkedIn 
+gender               | User's gender
+google_id            | User's Google profile ID
+job                  | User's job, as per LinkedIn
 linkedin_id          | User's LinkedIn profile ID
 linkedin_url         | User's LinkedIn profile URL
-locale               | User's language 
-opted_in_time        | Date the user opted in to messaging 
-phone                | User's phone number 
-twitter_name         | User's Twitter handle 
+locale               | User's language
+opted_in_time        | Date the user opted in to messaging
+phone                | User's phone number
+twitter_name         | User's Twitter handle
 zip_code             | User's zip code/postal code
