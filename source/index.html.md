@@ -4,8 +4,7 @@ title: Turnstyle API Reference
 toc_footers:
   - <a href='https://getturnstyle.com'>Learn about Turnstyle</a>
   - <a href='https://login.getturnstyle.com'>Login to Turnstyle</a>
-  - <a href='https://getturnstyle.com'>Check out our Engineering Blog</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='http://engineering.turnstyle.io/'>Engineering Blog</a>
 
 includes:
   - errors
