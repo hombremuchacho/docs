@@ -68,7 +68,7 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
 
   // language selector for mobile devices
   .lang-selector {
@@ -83,6 +83,8 @@ html, body {
   &>img {
     display: block;
     max-width: 100%;
+    margin: 20px 15px 10px;
+    max-height: 36px;
   }
 
   &>.search {
@@ -123,12 +125,12 @@ html, body {
     transition-property: height, margin;
     transition-duration: 180ms;
     transition-timing-function: ease-in-out;
+    background-color: $nav-subitem-bg;
+
     &.visible {
       height: 30%;
       margin-bottom: 1em;
     }
-
-    @include embossed-bg;
 
     li {
       margin: 1em $nav-padding;
@@ -161,7 +163,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 30px;
   }
 
   li {
@@ -173,9 +175,9 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    box-shadow: 0px 1px 0px $nav-active-shadow;
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    font-weight: 700;
   }
 
   // Subheaders are the submenus that slide open
@@ -187,10 +189,12 @@ html, body {
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
       font-size: 12px;
+      &:hover {
+        background-color: darken($nav-subitem-bg, 5%);
+      }
     }
 
     // for embossed look:
-    @include embossed-bg;
     &>li:last-child {
       box-shadow: none; // otherwise it'll overflow out of the subheader
     }
@@ -199,10 +203,13 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid darken($nav-bg, 5%);
 
     li,a {
+      font-size: 11px;
       color: $nav-text;
+      opacity: 0.8;
+      font-weight: 600;
       text-decoration: none;
     }
 
@@ -236,7 +243,7 @@ html, body {
   top: 0;
   left: 0;
   z-index: 100;
-  color: #000;
+  color: $riverbed;
   text-decoration: none;
   font-weight: bold;
   opacity: 0.7;
@@ -339,7 +346,6 @@ html, body {
     padding: 0 $main-padding;
     box-sizing: border-box;
     display: block;
-    text-shadow: $main-embossed-text-shadow;
 
     @extend %left-col;
   }
@@ -363,6 +369,7 @@ html, body {
     margin-top: 2em;
     border-top: 1px solid #ddd;
     background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+    letter-spacing: -0.03em;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -415,9 +422,11 @@ html, body {
     }
 
     th {
-      padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      border-bottom: 1px solid $table-border-color;
       vertical-align: bottom;
+      text-transform: uppercase;
+      font-size: 12px;
     }
 
     td {
@@ -425,7 +434,7 @@ html, body {
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $table-border-color;
     }
 
     tr:nth-child(odd)>td {
@@ -456,6 +465,8 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.05);
+    background-color: $catskill;
+    color: lighten($riverbed, 10%);
     padding: 3px;
     border-radius: 3px;
     @extend %break-words;
@@ -465,6 +476,7 @@ html, body {
   pre>code {
     background-color: transparent;
     padding: 0;
+    color: inherit;
   }
 
   aside {
@@ -510,7 +522,6 @@ html, body {
     margin: -2px;
     border-radius: 4px;
     border: 1px solid #F7E633;
-    text-shadow: 1px 1px 0 #666;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
 }
@@ -533,7 +544,6 @@ html, body {
     clear:right;
 
     box-sizing: border-box;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
 
     @extend %right-col;
 
@@ -556,8 +566,6 @@ html, body {
       border-radius: 5px;
       padding: $code-annotation-padding;
       color: #ccc;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #404040;
     }
   }
 }

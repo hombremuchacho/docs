@@ -19,30 +19,35 @@ under the License.
 // CUSTOMIZE SLATE
 ////////////////////////////////////////////////////////////////////////////////
 // Use these settings to help adjust the appearance of Slate
-
+$riverbed: #3D4758;
+$downy: #6CCBCB;
+$palesky: #6C7179;
+$catskill: #F4F6FA;
+$forest: #28A821;
+$roman: #DA6161;
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #3E4758 !default;
-$examples-bg: #22272f !default;
-$code-bg: #3E4758 !default;
-$code-annotation-bg: #1c1c1c !default;
-$nav-subitem-bg: #262626 !default;
-$nav-active-bg: #6CCBCB !default;
+$nav-bg: $riverbed !default;
+$examples-bg: darken($riverbed, 5%) !default;
+$code-bg: $riverbed !default;
+$code-annotation-bg: darken($riverbed, 5%) !default;
+$nav-subitem-bg: darken($riverbed, 5%) !default;
+$nav-active-bg: darken($riverbed, 10%) !default;
 $lang-select-border: #000 !default;
 $lang-select-bg: #1c1c1c !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
-$lang-select-pressed-bg: #6CCBCB !default; // color of language tab bg when mouse is pressed
+$lang-select-pressed-bg: $downy !default; // color of language tab bg when mouse is pressed
 $main-bg: #fff !default;
 $aside-notice-bg: #8fbcd4 !default;
-$aside-warning-bg: #c97a7e !default;
-$aside-success-bg: #6ac174 !default;
+$aside-warning-bg: $roman !default;
+$aside-success-bg: $forest !default;
 $search-notice-bg: #c97a7e !default;
 
 
 // TEXT COLORS
 ////////////////////
-$main-text: #333 !default; // main content text color
+$main-text: $palesky !default; // main content text color
 $nav-text: #fff !default;
 $nav-active-text: #fff !default;
 $lang-select-text: #fff !default; // color of unselected language tab text
@@ -52,7 +57,7 @@ $lang-select-pressed-text: #fff !default; // color of language tab text when mou
 
 // SIZES
 ////////////////////
-$nav-width: 230px !default; // width of the navbar
+$nav-width: 260px !default; // width of the navbar
 $examples-width: 50% !default; // portion of the screen taken up by code examples
 $logo-margin: 20px !default; // margin between nav items and logo, ignored if search is active
 $main-padding: 28px !default; // padding to left and right of content & examples
@@ -68,13 +73,14 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 // FONTS
 ////////////////////
 %default-font {
-  font-family: OpenSans-Regular;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
 %header-font {
   @extend %default-font;
-  font-weight: bold;
+  color: $riverbed;
+  font-weight: 600;
 }
 
 %code-font {
@@ -91,7 +97,8 @@ $nav-footer-border-color: #666 !default;
 $nav-embossed-border-top: #000 !default;
 $nav-embossed-border-bottom: #939393 !default;
 $main-embossed-text-shadow: 0px 1px 0px #fff !default;
-$search-box-border-color: #666 !default;
+$search-box-border-color: transparentize(white, 0.5) !default;
+$table-border-color: #ddd;
 
 
 ////////////////////////////////////////////////////////////////////////////////
