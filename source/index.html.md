@@ -1,9 +1,6 @@
 ---
 title: Turnstyle API Reference
 
-language_tabs:
-  - http
-
 toc_footers:
   - <a href='https://getturnstyle.com'>Learn about Turnstyle</a>
   - <a href='https://login.getturnstyle.com'>Login to Turnstyle</a>
