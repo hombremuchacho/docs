@@ -1633,8 +1633,8 @@ Content-Type: application/json
          </span><span class="s2">"tennis"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"cooking"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+      </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">opted-in.</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">opted-in</span><span class="p">,</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">_not_</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">parameter</span><span class="w">
+   </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -1710,8 +1710,8 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>opted_in</td>
-<td>Is the user opted-in for marketing, boolean</td>
-<td>Yes</td>
+<td>To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -1747,8 +1747,8 @@ Content-Type: application/json
     </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jane.doe@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"google_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000001</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">opted-in.</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">opted-in</span><span class="p">,</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">_not_</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">parameter</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -1819,8 +1819,8 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>opted_in</td>
-<td>Is the user opted-in for marketing, boolean</td>
-<td>Yes</td>
+<td>To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -1853,8 +1853,8 @@ Content-Type: application/json
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"twitter_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"janedoe"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"twitter_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000001</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">opted-in.</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">opted-in</span><span class="p">,</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">_not_</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">parameter</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -1910,8 +1910,8 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>opted_in</td>
-<td>Is the user opted-in for marketing, boolean</td>
-<td>Yes</td>
+<td>To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -1946,8 +1946,8 @@ Content-Type: application/json
     </span><span class="nt">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1975-05-26"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jane.doe@gmail.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">opted-in.</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">opted-in</span><span class="p">,</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">_not_</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">parameter</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -2018,8 +2018,8 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>opted_in</td>
-<td>Is the user opted-in for marketing, boolean</td>
-<td>Yes</td>
+<td>To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -2054,8 +2054,8 @@ Content-Type: application/json
     </span><span class="nt">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1975-05-26"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jane.doe@gmail.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">opted-in.</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">opted-in</span><span class="p">,</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">_not_</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">parameter</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -2126,8 +2126,8 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>opted_in</td>
-<td>Is the user opted-in for marketing, boolean</td>
-<td>Yes</td>
+<td>To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -2158,7 +2158,7 @@ Content-Type: application/json
     </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jane.doe@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+14161234567"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nt">"opted_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
