@@ -1188,7 +1188,7 @@ Content-Type: application/json
          "tennis",
          "cooking"
       ],
-      "opted_in": 1
+      "opted_in": 0 // Only include if not opted-in. If opted-in, do _not_ include this parameter
    }
 }
 
@@ -1202,20 +1202,20 @@ that property is not accepted for this authentication route.
 
 `POST https://wifi.getturnstyle.com/auth/facebook/third-party`
 
-Property     | Description                                     | Required
------------- | ------------------------------------------------| ------------
-access_token | The token generated in oauth                    | Yes
-ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
-client_mac   | User's device MAC adddress                      | Yes
-first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No
-birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No
-email        | User's email                                    | No
-facebook_id  | User's Facebook profile ID                      | Yes
-interests    | Interests the user has                          | No
-opted_in     | Is the user opted-in for marketing, boolean     | Yes
+Property     | Description                                                                   | Required
+------------ | ----------------------------------------------------------------------------- | ------------
+access_token | The token generated in oauth                                                  | Yes
+ap_mac       | MAC address of the AP the user is connecting to                               | No, if ap_alias is provided
+ap_alias     | Other identifier for the AP                                                   | No, if ap_mac provided
+client_mac   | User's device MAC adddress                                                    | Yes
+first_name   | User's first name                                                             | No (note, if not provided emails will not have a personalized greeting)
+last_name    | User's last name                                                              | No
+birthday     | User's birthday, yyyy-mm-dd                                                   | No
+gender       | User's gender                                                                 | No
+email        | User's email                                                                  | No
+facebook_id  | User's Facebook profile ID                                                    | Yes
+interests    | Interests the user has                                                        | No
+opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.   | No
 
 ## Google Authentication
 
@@ -1251,7 +1251,7 @@ Content-Type: application/json
     "gender": "F",
     "email": "jane.doe@gmail.com",
     "google_id": 1000000001,
-    "opted_in": 1
+    "opted_in": 0 // Only include if not opted-in. If opted-in, do _not_ include this parameter
   }
 }
 
@@ -1265,19 +1265,19 @@ that property is not accepted for this authentication route.
 
 `POST https://wifi.getturnstyle.com/auth/google/third-party`
 
-Property     | Description                                     | Required
------------- | ------------------------------------------------| ------------
-access_token | The token generated in oauth                    | Yes
-ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
-client_mac   | User's device MAC adddress                      | Yes
-first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No
-birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No
-email        | User's email                                    | No
-google_id    | User's Google profile ID                        | Yes
-opted_in     | Is the user opted-in for marketing, boolean     | Yes
+Property     | Description                                                                   | Required
+------------ | ------------------------------------------------                              | ------------
+access_token | The token generated in oauth                                                  | Yes
+ap_mac       | MAC address of the AP the user is connecting to                               | No, if ap_alias is provided
+ap_alias     | Other identifier for the AP                                                   | No, if ap_mac provided
+client_mac   | User's device MAC adddress                                                    | Yes
+first_name   | User's first name                                                             | No (note, if not provided emails will not have a personalized greeting)
+last_name    | User's last name                                                              | No
+birthday     | User's birthday, yyyy-mm-dd                                                   | No
+gender       | User's gender                                                                 | No
+email        | User's email                                                                  | No
+google_id    | User's Google profile ID                                                      | Yes
+opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.   | No
 
 ## Google Authentication
 
@@ -1310,7 +1310,7 @@ Content-Type: application/json
     "name": "Jane Doe",
     "twitter_name": "janedoe",
     "twitter_id": 2000000001,
-    "opted_in": 1
+    "opted_in": 0 // Only include if not opted-in. If opted-in, do _not_ include this parameter
   }
 }
 
@@ -1324,16 +1324,16 @@ that property is not accepted for this authentication route.
 
 `POST https://wifi.getturnstyle.com/auth/twitter/third-party`
 
-Property     | Description                                     | Required
------------- | ------------------------------------------------| ------------
-access_token | The token generated in oauth                    | Yes
-ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
-client_mac   | User's device MAC adddress                      | Yes
-name         | User's name as denoted by Twitter's API         | No (note, if not provided emails will not have a personalized greeting)
-twitter_name | User's twitter name                             | Yes
-twitter_id   | User's Twitter profile ID                       | Yes
-opted_in     | Is the user opted-in for marketing, boolean     | Yes
+Property     | Description                                                                   | Required
+------------ | ------------------------------------------------                              | ------------
+access_token | The token generated in oauth                                                  | Yes
+ap_mac       | MAC address of the AP the user is connecting to                               | No, if ap_alias is provided
+ap_alias     | Other identifier for the AP                                                   | No, if ap_mac provided
+client_mac   | User's device MAC adddress                                                    | Yes
+name         | User's name as denoted by Twitter's API                                       | No (note, if not provided emails will not have a personalized greeting)
+twitter_name | User's twitter name                                                           | Yes
+twitter_id   | User's Twitter profile ID                                                     | Yes
+opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.   | No
 
 ## SMS Authentication
 
@@ -1368,7 +1368,7 @@ Content-Type: application/json
     "birthday": "1975-05-26",
     "gender": "F",
     "email": "jane.doe@gmail.com",
-    "opted_in": 1
+    "opted_in": 0 // Only include if not opted-in. If opted-in, do _not_ include this parameter
   }
 }
 
@@ -1382,19 +1382,19 @@ that property is not accepted for this authentication route.
 
 `POST https://wifi.getturnstyle.com/auth/sms/third-party`
 
-Property     | Description                                     | Required
------------- | ------------------------------------------------| ------------
-access_token | The token generated in oauth                    | Yes
-ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
-client_mac   | User's device MAC adddress                      | Yes
-first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No
-birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No
-email        | User's email                                    | No
-phone        | User's phone number                             | Yes
-opted_in     | Is the user opted-in for marketing, boolean     | Yes
+Property     | Description                                                                   | Required
+------------ | ------------------------------------------------                              | ------------
+access_token | The token generated in oauth                                                  | Yes
+ap_mac       | MAC address of the AP the user is connecting to                               | No, if ap_alias is provided
+ap_alias     | Other identifier for the AP                                                   | No, if ap_mac provided
+client_mac   | User's device MAC adddress                                                    | Yes
+first_name   | User's first name                                                             | No (note, if not provided emails will not have a personalized greeting)
+last_name    | User's last name                                                              | No
+birthday     | User's birthday, yyyy-mm-dd                                                   | No
+gender       | User's gender                                                                 | No
+email        | User's email                                                                  | No
+phone        | User's phone number                                                           | Yes
+opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.   | No
 
 ## Email Authentication
 
@@ -1429,7 +1429,7 @@ Content-Type: application/json
     "birthday": "1975-05-26",
     "gender": "F",
     "email": "jane.doe@gmail.com",
-    "opted_in": 1
+    "opted_in": 0 // Only include if not opted-in. If opted-in, do _not_ include this parameter
   }
 }
 
@@ -1443,19 +1443,19 @@ that property is not accepted for this authentication route.
 
 `POST https://wifi.getturnstyle.com/auth/email/third-party`
 
-Property     | Description                                     | Required
------------- | ------------------------------------------------| ------------
-access_token | The token generated in oauth                    | Yes
-ap_mac       | MAC address of the AP the user is connecting to | No, if ap_alias is provided
-ap_alias     | Other identifier for the AP                     | No, if ap_mac provided
-client_mac   | User's device MAC adddress                      | Yes
-first_name   | User's first name                               | No (note, if not provided emails will not have a personalized greeting)
-last_name    | User's last name                                | No
-birthday     | User's birthday, yyyy-mm-dd                     | No
-gender       | User's gender                                   | No
-email        | User's email                                    | Yes
-phone        | User's phone number                             | No
-opted_in     | Is the user opted-in for marketing, boolean     | Yes
+Property     | Description                                                                  | Required
+------------ | ------------------------------------------------                             | ------------
+access_token | The token generated in oauth                                                 | Yes
+ap_mac       | MAC address of the AP the user is connecting to                              | No, if ap_alias is provided
+ap_alias     | Other identifier for the AP                                                  | No, if ap_mac provided
+client_mac   | User's device MAC adddress                                                   | Yes
+first_name   | User's first name                                                            | No (note, if not provided emails will not have a personalized greeting)
+last_name    | User's last name                                                             | No
+birthday     | User's birthday, yyyy-mm-dd                                                  | No
+gender       | User's gender                                                                | No
+email        | User's email                                                                 | Yes
+phone        | User's phone number                                                          | No
+opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.  | No
 
 ## User Update
 
@@ -1486,7 +1486,7 @@ Content-Type: application/json
     "last_name": "Doe",
     "email": "jane.doe@gmail.com",
     "phone": "+14161234567",
-    "opted_in": 0
+    "opted_in": 0 
   }
 }
 
