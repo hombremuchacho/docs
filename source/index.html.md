@@ -1279,7 +1279,7 @@ email        | User's email                                                     
 google_id    | User's Google profile ID                                                      | Yes
 opted_in     | To indicate if a user is NOT opted-in. If opted-in, exclude this parameter.   | No
 
-## Google Authentication
+## Twitter Authentication
 
 > POST URL
 
