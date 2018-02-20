@@ -6,9 +6,9 @@ Vagrant.configure(2) do |config|
     type: "shell",
     inline: <<-SHELL
       sudo apt-get update
-      sudo apt-get install -yq ruby2.0 ruby2.0-dev pkg-config build-essential nodejs git libxml2-dev libxslt-dev
+      sudo apt-get install -yq ruby2.4 ruby2.4-dev pkg-config build-essential nodejs git libxml2-dev libxslt-dev
       sudo apt-get autoremove -yq
-      gem2.0 install --no-ri --no-rdoc bundler
+      gem install --no-ri --no-rdoc bundler
     SHELL
 
   # add the local user git config to the vm
