@@ -63,7 +63,7 @@ Yelp WiFi's Turnstyle API uses OAuth 2.0 Authentication. Yelp WiFi requires the 
 to be encoded using base64 encoding (id:secret). The access tokens expire
 every 24 hours.
 
-Yelp WiFi does 'leaky bucket' request throttling. If you require loosened
+Yelp WiFi's Turnstyle API does 'leaky bucket' request throttling. If you require loosened
 throttling restrictions please contact support@yelpwifi.com
 
 ### HTTPS Request
@@ -865,7 +865,7 @@ Content-Type:application/json
 
 ```
 
-The details of known visitors (visitors who have a Turnstyle profile), who visited
+The details of known visitors (visitors who have a Yelp WiFi profile), who visited
 the venue during the specified time period, including name, email, phone number,
 Facebook/Google/Twitter ID and device-type. The 'key' is the same as the wifi_uid
 in other end-points.
@@ -998,7 +998,7 @@ URI Parameters| Description                                                     
 trigger   | The type of campaign that is sent, Real-time (R) or global (G)              | R
 venue_id  | The venue that triggered the campaign, integer                              | 450007
 mac_id    | The visitor's device ID that triggered the campaign, integer                | 1235421
-user_id   | The visitors Turnstyle ID (or wifi_uid) that triggerd the campaign, integer | 69615390
+user_id   | The visitors Yelp WiFi ID (or wifi_uid) that triggerd the campaign, integer | 69615390
 timestamp | The time that the campaign was triggered, unix                              | 1425358800
 
 ## Custom Campaign and Coupon Response
@@ -1022,15 +1022,15 @@ https://api-general.getturnstyle.com/response_to_Turnstyle/send_bool/coupon_name
 ```
 
 
-To tailor the message and/or coupon that Turnstyle delivers to the end-client,
-you can specify the parameters to send via a RESPONSE to the POST Turnstyle
+To tailor the message and/or coupon that Yelp Wifi delivers to the end-client,
+you can specify the parameters to send via a RESPONSE to the POST Yelp Wifi
 sends.
 
 The 'override' properties are optional. The campaign's message and coupon (if
 the campaign has one) will only be sent if 'send' is true or if a response is
 not provided. If the 'override' property is given, it will override properties
 of the campaign or coupon just for that message. Properties that are not specified
-will have the values given to the campaign in Turnstyle's application.
+will have the values given to the campaign in Yelp Wifi's application.
 
 ### HTTPS POST URL
 
@@ -1065,10 +1065,10 @@ https://api-general.getturnstyle.com/created_by_customer_success_team/mac_id/use
 
 ```
 
-Turnstyle has the capability of sending POST notifications when users sign in
+Yelp Wifi's Turnstyle API has the capability of sending POST notifications when users sign in
 to specified access points. When a user signs into one of the associated venues,
 a POST request is made to the URL. If you would like to enable functionality,
-please contact support@getturnstyle.com
+please contact support@yelpwifi.com
 
 Note: Not all of the user properties will be present, depending on what method
 the user used to authenticate, and what info they granted Turnstyle to have access
@@ -1090,7 +1090,7 @@ will be set automatically.
 If you do not wish to override any RADIUS attributes, you may simply respond
 with "OK" or {} (an empty JSON object).
 
-You should give timely responses as Turnstyle's captive portal will wait up
+You should give timely responses as Yelp WiFi's captive portal will wait up
 to several seconds for them before continuing to sign a user in. Note that
 additional fields may be present in the "user" object of the JSON sent
 depending on venue geography (example: AirMiles)
@@ -1188,7 +1188,7 @@ Property     | Description                                                      
 access_token | The token generated in oauth                                                  | Yes
 ap_mac       | MAC address of the AP the user is connecting to                               | No, if ap_alias is provided
 ap_alias     | Other identifier for the AP                                                   | No, if ap_mac provided
-client_mac   | User's device MAC adddress                                                    | Yes
+client_mac   | User's device MAC address                                                     | Yes
 first_name   | User's first name                                                             | No (note, if not provided emails will not have a personalized greeting)
 last_name    | User's last name                                                              | No
 birthday     | User's birthday, yyyy-mm-dd                                                   | No
@@ -1474,15 +1474,15 @@ Content-Type: application/json
 ```
 
 You may have a use case in which a user updates their information on your
-application's side, and you would like to sync this data back to Turnstyle. For
+application's side, and you would like to sync this data back to Yelp WiFi. For
 example, if on your POS a user changes their email or phone number, you can use
-the following API to update the user profile on the Turnstyle platform instead of
+the following API to update the user profile on the Yelp WiFi platform instead of
 waiting for the user to sign back into the Wi-Fi portal to provide their updated
 information. Note All of the fields under 'data' are optional (but you must
 include at least one). Also, under the 'data' field, you are able to update all of
 the same fields as the different data types in the above user registration methods.
 
-The account_name in the URL will be provided by Turnstyle to you.
+The account_name in the URL will be provided by Yelp WiFi to you.
 
 ### HTTPS Request
 
@@ -1491,7 +1491,7 @@ The account_name in the URL will be provided by Turnstyle to you.
 Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
-user_id      | The visitors Turnstyle ID (or wifi_uid)         | Yes
+user_id      | The visitors Yelp WiFi ID (or wifi_uid)         | Yes
 first_name   | User's first name                               | No (
 last_name    | User's last name                                | No
 email        | User's email                                    | Yes
@@ -1504,8 +1504,8 @@ opted_in     | Is the user opted-in for marketing, boolean     | Yes
 
 
 This section contains documentation for some of the advanced features available
-when customizing a venue's social wifi settings in the Turnstyle dashboard.
-These are NOT Turnstyle endpoints.
+when customizing a venue's social wifi settings in the Yelp WiFi dashboard.
+These are NOT Yelp WiFi API endpoints.
 
 When enabled, all available user data will be appended to the redirect url as
 query string parameters. The data available is dependent on the user's
@@ -1520,7 +1520,7 @@ string.
 
 Property             | Description
 -------------------- | -------------------------------------------
-id                   | User's Turnstyle ID (or wifi_uid)
+id                   | User's Yelp WiFi ID (or wifi_uid)
 birthday             | User's birthday
 birthday_approximate | Is the user's birthday guessed, boolean
 company              | Where the user works, as per LinkedIn
