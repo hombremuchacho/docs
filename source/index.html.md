@@ -1,9 +1,9 @@
 ---
-title: Turnstyle API Reference
+title: Yelp WiFi Turnstyle API Reference
 
 toc_footers:
-  - <a href='https://getturnstyle.com'>Learn about Turnstyle</a>
-  - <a href='https://login.getturnstyle.com'>Login to Turnstyle</a>
+  - <a href='https://yelpwifi.com'>Learn about Yelp WiFi</a>
+  - <a href='https://app.yelpwifi.com'>Login to Yelp WiFi</a>
   - <a href='http://engineering.turnstyle.io/'>Engineering Blog</a>
 
 includes:
@@ -14,15 +14,15 @@ search: true
 
 # Introduction
 
-Turnstyle's APIs provide access to the same data and metrics available on our
+Yelp WiFi's Turnstyle APIs provide access to the same data and metrics available on our
 dashboard through programmatic means. This is a living document so please be
 sure to check back frequently for updates. Our APIs are *only* available to active
-Turnstyle customers.
+Yelp WiFi customers.
 
-If you are interested in purchasing Turnstyle please contact sales@getturnstyle.com
+If you are interested in purchasing Yelp WiFi please contact sales@yelpwifi.com
 
 If you have questions about our documentation please contact
-support@getturnstyle.com
+support@yelpwifi.com
 
 
 # Authentication
@@ -59,12 +59,12 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 
 Before any requests can be made, you must first request an access token.
 
-Turnstyle uses OAuth 2.0 Authentication. Turnstyle requires the Id/Secret
+Yelp WiFi's Turnstyle API uses OAuth 2.0 Authentication. Yelp WiFi requires the Id/Secret
 to be encoded using base64 encoding (id:secret). The access tokens expire
 every 24 hours.
 
-Turnstyle does 'leaky bucket' request throttling. If you require loosened
-throttling restrictions please contact support@getturnstyle.com
+Yelp WiFi does 'leaky bucket' request throttling. If you require loosened
+throttling restrictions please contact support@yelpwifi.com
 
 ### HTTPS Request
 
@@ -114,9 +114,37 @@ Content-Type:application/json
     "rss_walkby": "-110",
     "visit_duration_keep_fraction": "0.8",
     "brand_colour": "",
+    "email_domain": null,        
+    "city_data": 0,
+    "reseller_id": null,
+    "brand_id": null,
+    "wifi_data": 1,
+    "tp_data": 0,
+    "white_label_id": 0,
+    "language": 1,
+    "webhook_set_id": null,
+    "wifi_optin_type": 3,
+    "company_name": null,
+    "public_email": null,
+    "public_phone": null,
+    "public_address": null,
+    "duration_limit": 86400,
+    "block_optin_email": 0,
+    "yelp_biz_encid": null,
+    "yelp_parent_sfdc_id": null,
     "logo": "https://s3.amazonaws.com/static.getturnstyle.com/venues/ed9fe4d9d66d150a770d6cd7eaa8b3d07f089975.png",
+    "reseller_logo": null,
     "time_zone": "America/Toronto",
-    "read_only": "0"
+    "whitelabel_host_name": "getturnstyle.com",
+    "whitelabel_comp_name": "Yelp WiFi",
+    "whitelabel_support_contact": "support@yelpwifi.com",
+    "whitelabel_logo": "https://s3.amazonaws.com/yelpWifi-app1/logo.png",
+    "whitelabel_legal_url": "https://getturnstyle.com/legal",
+    "whitelabel_public_site": "https://yelpwifi.com",
+    "whitelabel_public_email": "contact@yelpwifi.com",
+    "whitelabel_public_phone": "1-877-452-7180",
+    "whitelabel_public_address": "200-76 Stafford Street, Toronto, ON M6J 2S1",
+    "brand_name": null
   },
   {
     "id": "4235676",
@@ -143,9 +171,37 @@ Content-Type:application/json
     "rss_walkby": "-110",
     "visit_duration_keep_fraction": "0.8",
     "brand_colour": "",
+    "email_domain": null,
+    "city_data": 0,
+    "reseller_id": null,
+    "brand_id": null,
+    "wifi_data": 1,
+    "tp_data": 0,
+    "white_label_id": 0,
+    "language": 1,
+    "webhook_set_id": null,
+    "wifi_optin_type": 3,
+    "company_name": null,
+    "public_email": null,
+    "public_phone": null,
+    "public_address": null,
+    "duration_limit": 86400,
+    "block_optin_email": 0,
+    "yelp_biz_encid": null,
+    "yelp_parent_sfdc_id": null,
     "logo": "https://s3.amazonaws.com/static.getturnstyle.com/venues/ed9fe4d9d66d150a770d6cd7eaa8b3d07f089975.png",
+    "reseller_logo": null,
     "time_zone": "America/Toronto",
-    "read_only": "0"
+    "whitelabel_host_name": "getturnstyle.com",
+    "whitelabel_comp_name": "Yelp WiFi",
+    "whitelabel_support_contact": "support@yelpwifi.com",
+    "whitelabel_logo": "https://s3.amazonaws.com/yelpWifi-app1/logo.png",
+    "whitelabel_legal_url": "https://getturnstyle.com/legal",
+    "whitelabel_public_site": "https://yelpwifi.com",
+    "whitelabel_public_email": "contact@yelpwifi.com",
+    "whitelabel_public_phone": "1-877-452-7180",
+    "whitelabel_public_address": "200-76 Stafford Street, Toronto, ON M6J 2S1",
+    "brand_name": null
   }
 ]
 ```
@@ -899,7 +955,7 @@ Content-Type:application/json
 ```
 
 The aggregrate profiles of visitors of a venue based on their attributes across
-the Turnstyle network.
+the Yelp WiFi network.
 
 ### HTTPS Request
 
@@ -926,7 +982,7 @@ https://api-general.getturnstyle.com/url_defined_in_campaign_portal/trigger/venu
 ```
 
 Campaign POST URLs can be set when creating or modifying a campaign (inside the
-Turnstyle dashboard), in the message tab > Advanced (found using the gear in the
+Yelp WiFi dashboard), in the message tab > Advanced (found using the gear in the
 top right of the modal window.
 
 If a campaign has a POST URL set, then when the campaign would have normally just
