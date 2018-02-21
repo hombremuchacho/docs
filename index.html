@@ -165,7 +165,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 to be encoded using base64 encoding (id:secret). The access tokens expire
 every 24 hours.</p>
 
-<p>Yelp WiFi does &lsquo;leaky bucket&rsquo; request throttling. If you require loosened
+<p>Yelp WiFi&rsquo;s Turnstyle API does &lsquo;leaky bucket&rsquo; request throttling. If you require loosened
 throttling restrictions please contact support@yelpwifi.com</p>
 
 <h3 id="https-request">HTTPS Request</h3>
@@ -1130,7 +1130,7 @@ Content-Type:application/json
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p>The details of known visitors (visitors who have a Turnstyle profile), who visited
+<p>The details of known visitors (visitors who have a Yelp WiFi profile), who visited
 the venue during the specified time period, including name, email, phone number,
 Facebook/Google/Twitter ID and device-type. The &#39;key&rsquo; is the same as the wifi_uid
 in other end-points.</p>
@@ -1322,7 +1322,7 @@ there is no response with 3 seconds, the email/sms message will send.</p>
 </tr>
 <tr>
 <td>user_id</td>
-<td>The visitors Turnstyle ID (or wifi_uid) that triggerd the campaign, integer</td>
+<td>The visitors Yelp WiFi ID (or wifi_uid) that triggerd the campaign, integer</td>
 <td>69615390</td>
 </tr>
 <tr>
@@ -1350,15 +1350,15 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 https://api-general.getturnstyle.com/response_to_Turnstyle/send_bool/coupon_name/coupon_description/redeem_message/expiry_date/barcode_value/barcode_type/email_logo/email_subject/email_body/email_from/email_html_bool/tweets/sms_message`
 
 </code></pre>
-<p>To tailor the message and/or coupon that Turnstyle delivers to the end-client,
-you can specify the parameters to send via a RESPONSE to the POST Turnstyle
+<p>To tailor the message and/or coupon that Yelp Wifi delivers to the end-client,
+you can specify the parameters to send via a RESPONSE to the POST Yelp Wifi
 sends.</p>
 
 <p>The &#39;override&rsquo; properties are optional. The campaign&rsquo;s message and coupon (if
 the campaign has one) will only be sent if &#39;send&rsquo; is true or if a response is
 not provided. If the &#39;override&rsquo; property is given, it will override properties
 of the campaign or coupon just for that message. Properties that are not specified
-will have the values given to the campaign in Turnstyle&rsquo;s application.</p>
+will have the values given to the campaign in Yelp Wifi&rsquo;s application.</p>
 
 <h3 id="https-post-url">HTTPS POST URL</h3>
 
@@ -1454,10 +1454,10 @@ will have the values given to the campaign in Turnstyle&rsquo;s application.</p>
 https://api-general.getturnstyle.com/created_by_customer_success_team/mac_id/user_id/first_name/last_name/phone/email/gender/birthday/job/company/locale/facebook_id/twitter_name/twitter_id/google_id/linkedin_id
 
 </code></pre>
-<p>Turnstyle has the capability of sending POST notifications when users sign in
+<p>Yelp Wifi&rsquo;s Turnstyle API has the capability of sending POST notifications when users sign in
 to specified access points. When a user signs into one of the associated venues,
 a POST request is made to the URL. If you would like to enable functionality,
-please contact support@getturnstyle.com</p>
+please contact support@yelpwifi.com</p>
 
 <p>Note: Not all of the user properties will be present, depending on what method
 the user used to authenticate, and what info they granted Turnstyle to have access
@@ -1479,7 +1479,7 @@ will be set automatically.</p>
 <p>If you do not wish to override any RADIUS attributes, you may simply respond
 with &ldquo;OK&rdquo; or {} (an empty JSON object).</p>
 
-<p>You should give timely responses as Turnstyle&rsquo;s captive portal will wait up
+<p>You should give timely responses as Yelp WiFi&rsquo;s captive portal will wait up
 to several seconds for them before continuing to sign a user in. Note that
 additional fields may be present in the &ldquo;user&rdquo; object of the JSON sent
 depending on venue geography (example: AirMiles)</p>
@@ -1642,7 +1642,7 @@ that property is not accepted for this authentication route.</p>
 </tr>
 <tr>
 <td>client_mac</td>
-<td>User&rsquo;s device MAC adddress</td>
+<td>User&rsquo;s device MAC address</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -2136,15 +2136,15 @@ Content-Type: application/json
 
 </span></code></pre>
 <p>You may have a use case in which a user updates their information on your
-application&rsquo;s side, and you would like to sync this data back to Turnstyle. For
+application&rsquo;s side, and you would like to sync this data back to Yelp WiFi. For
 example, if on your POS a user changes their email or phone number, you can use
-the following API to update the user profile on the Turnstyle platform instead of
+the following API to update the user profile on the Yelp WiFi platform instead of
 waiting for the user to sign back into the Wi-Fi portal to provide their updated
 information. Note All of the fields under &#39;data&rsquo; are optional (but you must
 include at least one). Also, under the &#39;data&rsquo; field, you are able to update all of
 the same fields as the different data types in the above user registration methods.</p>
 
-<p>The account_name in the URL will be provided by Turnstyle to you.</p>
+<p>The account_name in the URL will be provided by Yelp WiFi to you.</p>
 
 <h3 id="https-request">HTTPS Request</h3>
 
@@ -2164,7 +2164,7 @@ the same fields as the different data types in the above user registration metho
 </tr>
 <tr>
 <td>user_id</td>
-<td>The visitors Turnstyle ID (or wifi_uid)</td>
+<td>The visitors Yelp WiFi ID (or wifi_uid)</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -2199,8 +2199,8 @@ the same fields as the different data types in the above user registration metho
 <h2 id="include-user-data-check-box">Include User Data Check Box</h2>
 
 <p>This section contains documentation for some of the advanced features available
-when customizing a venue&rsquo;s social wifi settings in the Turnstyle dashboard.
-These are NOT Turnstyle endpoints.</p>
+when customizing a venue&rsquo;s social wifi settings in the Yelp WiFi dashboard.
+These are NOT Yelp WiFi API endpoints.</p>
 
 <p>When enabled, all available user data will be appended to the redirect url as
 query string parameters. The data available is dependent on the user&rsquo;s
@@ -2221,7 +2221,7 @@ string.</p>
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>User&rsquo;s Turnstyle ID (or wifi_uid)</td>
+<td>User&rsquo;s Yelp WiFi ID (or wifi_uid)</td>
 </tr>
 <tr>
 <td>birthday</td>
