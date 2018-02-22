@@ -368,7 +368,7 @@ Content-Type:application/json
 ```
 
 A lists of each individual user (as specified by a MAC ID), their entry time
-into the venue, their maximum detected RSSI, and their exit time from the venue.
+into the venue, their maximum detected Received Signal Strength Indication (RSSI), and their exit time from the venue.
 Note: MAC ID is a unique device identifier, but it is not equal to the visitor's
 hardware MAC Address.
 
