@@ -299,7 +299,7 @@ visitors, total visitors, total unique visitors, and unique daily visitors. New 
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id                                             | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -380,7 +380,7 @@ hardware MAC Address.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -446,7 +446,7 @@ criteria around RSSI and FRAMES to be counted as Walk-By (vs Visitors or Noise).
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -498,7 +498,7 @@ out by day.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -604,7 +604,7 @@ and >12h.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -713,7 +713,7 @@ period specified.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
@@ -801,8 +801,9 @@ metric returns data for the single day specified in the request, ie.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the day of data returned       | 1425358800
+LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
 
 ## Known Visitors
@@ -887,7 +888,7 @@ in other end-points.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the day of data returned       | 1425358800
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
 
@@ -974,7 +975,7 @@ the Yelp WiFi network.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007
 START         | Unix timestamp representing the day of data returned       | 1425358800
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
 
@@ -1057,8 +1058,8 @@ barcode_value      | The content of the barcode, disregard if barcode is not use
 bar_code_type      | The type of barcode displayed, disregard if barcode is not used                                     | UFA-1
 email_logo         | The logo in the email, dispayed at the top of the message                                           | http://imgur.com/as123sa
 email_subject      | The subject line of the email                                                                       | HELLO WORLD
-email_body         | The content of the email                                                                            | Welcome to Turnstyle
-email_from         | The from line of the email                                                                          | Turnstyle Solutions
+email_body         | The content of the email                                                                            | Welcome to Yelp WiFi
+email_from         | The from line of the email                                                                          | Yelp WiFi
 email_html_bool    | Indicator if the email has html content (recommended), boolean, default enabled                     | True
 tweets             | Content of the tweet                                                                                | Hello @World
 sms_message        | Content of the text message                                                                         | Hello World
@@ -1081,7 +1082,7 @@ a POST request is made to the URL. If you would like to enable functionality,
 please contact support@yelpwifi.com
 
 Note: Not all of the user properties will be present, depending on what method
-the user used to authenticate, and what info they granted Turnstyle to have access
+the user used to authenticate, and what info they granted Yelp WiFi to have access
 to.
 
 ### Response
@@ -1502,7 +1503,7 @@ Property     | Description                                     | Required
 ------------ | ------------------------------------------------| ------------
 access_token | The token generated in oauth                    | Yes
 user_id      | The visitors Yelp WiFi ID (or wifi_uid)         | Yes
-first_name   | User's first name                               | No (
+first_name   | User's first name                               | No 
 last_name    | User's last name                                | No
 email        | User's email                                    | Yes
 phone        | User's phone number                             | No
