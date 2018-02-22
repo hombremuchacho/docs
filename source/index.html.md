@@ -289,7 +289,7 @@ Content-Type:application/json
 ```
 
 This API provides the number of visitors seen at a particular venue or group for a given time period. This is separated by new
-visitors, total visitors, total unique visitors, and unique daily visitors. New visitors are visitors who have not previously been seen at the venue. The unique value on the first day represents the total number of unique visitors for the given time period. Unique daily represents the individual visitors for the day. The value for unique minus the sum of unique_daily represents the number of repeat visitors for the given date range.
+visitors, total visitors, total unique visitors, and unique daily visitors. New visitors are visitors who have not previously been seen at the venue. The `unique` value that's provided on the first day represents the total number of unique visitors for the given time period. Unique daily represents the individual visitors for the day. The value for `unique` minus the sum of `unique_daily` represents the number of repeat visitors for the given date range.
 
 
 ### HTTPS Request
