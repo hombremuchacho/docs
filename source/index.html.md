@@ -234,52 +234,62 @@ Content-Type:application/json
 
 ```json
 {
-  "start": [
-    "1425358800"
-  ],
-  "length": 6,
-  "request_time": 0.030459880828857,
-  "has_data": true,
-  "data": {
-    "4234970": {
-      "1425358800": [
-        {
-          "key": "2015-03-03",
-          "values": {
-            "total": 77,
-            "new": 20
-          }
-        },
-        {
-          "key": "2015-03-04",
-          "values": {
-            "total": 4,
-            "new": 1
-          }
-        },
-        {
-          "key": "2015-03-05",
-          "values": {
-            "total": 0,
-            "new": 0
-          }
-        },
-        {
-          "key": "2015-03-06",
-          "values": {
-            "total": 54,
-            "new": 16
-          }
+    "start": [
+        "1514764800"
+    ],
+    "length": 3,
+    "error_margin": [
+        13
+    ],
+    "request_time": 47.448456,
+    "has_data": true,
+    "data": {
+        "V1234567": {
+            "1514764800": [
+                {
+                    "key": "2018-01-01",
+                    "values": {
+                        "total": 45,
+                        "new": 30,
+                        "unique": 228,
+                        "unique_daily": 45
+                    }
+                },
+                {
+                    "key": "2018-01-02",
+                    "values": {
+                        "total": 42,
+                        "new": 22,
+                        "unique": 0,
+                        "unique_daily": 42
+                    }
+                },
+                {
+                    "key": "2018-01-03",
+                    "values": {
+                        "total": 73,
+                        "new": 48,
+                        "unique": 0,
+                        "unique_daily": 73
+                    }
+                },
+                {
+                    "key": "2018-01-04",
+                    "values": {
+                        "total": 75,
+                        "new": 28,
+                        "unique": 0,
+                        "unique_daily": 75
+                    }
+                }
+            ]
         }
-      ]
     }
-  }
 }
 ```
 
-The number of visitors seen at a particular venue. This is broken out by new
-visitors and total visitors. New visitors are visitors who have never been
-seen at the venue previously.
+This API provides the number of visitors seen at a particular venue or group for a given time period. This is separated by new
+visitors, total visitors, total unique visitors, and unique daily visitors. New visitors are visitors who have not previously been seen at the venue. The unique value on the first day represents the total number of unique visitors for the given time period. Unique daily represents the individual visitors for the day. The value for unique minus the sum of unique_daily represents the number of repeat visitors for the given date range.
 
 
 ### HTTPS Request
@@ -289,7 +299,7 @@ seen at the venue previously.
 URI Parameters| Description                                                | Example
 ------------  | -----------------------------------------------------------| ---------------------------------------
 ACCESS_TOKEN  | the token generated in oauth                               | 0281a718b3a033f01dda311fab7cfe59066bbb73
-ID            | venue/group id, comma separated, string                    | 450007,45008
+ID            | venue/group id                                             | 450007,45008
 START         | Unix timestamp representing the first day of data returned | 1425358800
 LENGTH        | Number of days since start date to return                  | 7
 TYPE          | What type of ID is being submitted, venue (V) or group (G) | V
